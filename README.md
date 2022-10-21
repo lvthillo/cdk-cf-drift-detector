@@ -1,15 +1,31 @@
-# Welcome to your CDK TypeScript project
+# Automated CloudFormation Detection with Slack notifications in CDK
 
-You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`CdkDriftDetectorStack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+This demo project creates a solution which makes use of [AWS Config cloudformation-stack-drift-detection-check managed rule](https://docs.aws.amazon.com/config/latest/developerguide/cloudformation-stack-drift-detection-check.html). AWS Config should be enabled within your account. You can enable AWS Config for CloudFormation stacks only. This can reduce the amount of recorded AWS Config events and can reduce cost.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Architecture
 
-## Useful commands
+## Create Slack Integration with AWS ChatBot
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+
+## Deploy Solution
+
+* Clone repository
+
+* Run `npm i`
+
+* 
+
+```
+cdk deploy \
+  --parameters topicName="slack-config" \
+  --parameters slackChannelId="xxx" \
+  --parameters slackWorkSpaceId="yyy" \
+  --parameters slackChannelConfigName="slack-config"
+```
+
+## Use of Constructs
+
+This CDK stack makes use of two constructs
+* [CloudFormationStackDriftDetectionCheck](https://docs.aws.amazon.com/cdk/api/v1/docs/@aws-cdk_aws-config.CloudFormationStackDriftDetectionCheck.html)
+* [cdk-slack-chatbot](https://constructs.dev/packages/cdk-slack-chatbot/)
+
