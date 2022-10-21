@@ -5,7 +5,7 @@ This demo project creates a solution which makes use of [AWS Config cloudformati
 ## Architecture
 ![CDK](https://user-images.githubusercontent.com/14105387/197257392-695a6bfa-af11-4871-98b8-478a9eb10f0e.png)
 
-## Create Slack Integration with AWS ChatBot
+## Create Slack Integration with AWS Chatbot
 * AWS Console > AWS Chatbot > Configure new client
 <img width="692" alt="slack" src="https://user-images.githubusercontent.com/14105387/197257125-2bfdb2c7-fde7-48a3-acf9-2eed87bd5021.png">
 
